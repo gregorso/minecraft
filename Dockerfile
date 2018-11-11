@@ -20,4 +20,4 @@ WORKDIR /home/minecraft
 
 USER minecraft
 ENTRYPOINT [ ""  ]
-CMD [ " java -Xmx2048M -Xms2048M -jar forge-1.12.2-14.23.5.2772-universal.jar nogui" ]
+CMD [ "/bin/bash", "java -Xmx2048M -Xms2048M -jar forge-1.12.2-14.23.5.2772-universal.jar nogui" ]
