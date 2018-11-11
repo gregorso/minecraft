@@ -7,7 +7,7 @@
 
 from centos
 #requirements
-RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel sudo nano wget && yum -y update && yum clean all 
+RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel sudo nano wget && yum -y update && yum clean all && ENV JAVA_HOME /usr/lib/jvm/java-openjdk && ENV PATH PATH$:JAVA_HOME/bin
 #from scratch
 
 # download minecraft
