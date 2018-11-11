@@ -8,8 +8,7 @@
 from centos
 #requirements
 RUN yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm && yum -y install java-1.8.0-openjdk java-1.8.0-openjdk-devel sudo nano wget && yum -y update && yum clean all
-ENV JAVA_HOME /usr/lib/jvm/java-openjdk
-ENV PATH PATH$:JAVA_HOME/bin
+
 #from scratch
 
 # download minecraft
@@ -18,8 +17,9 @@ RUN useradd -m minecraft && usermod -aG wheel minecraft &&  su - minecraft -c "w
 #forge installieren
 RUN su - minecraft -c "wget -q https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2772/forge-1.12.2-14.23.5.2772-installer.jar && java -jar forge-1.12.2-14.23.5.2772-installer.jar --installServer"
 
+ENV JAVA_HOME /usr/lib/jvm/java-openjdk
+ENV PATH PATH$:JAVA_HOME/bin
 WORKDIR /home/minecraft
-
 USER minecraft
 ENTRYPOINT [ "java","Xmx2048M -Xms2048M -jar","forge-1.12.2-14.23.5.2772-universal.jar","nogui" ]
 #CMD [ "/bin/bash", "java -Xmx2048M -Xms2048M -jar forge-1.12.2-14.23.5.2772-universal.jar nogui" ]
