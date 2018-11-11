@@ -18,7 +18,7 @@ RUN useradd -m minecraft && usermod -aG wheel minecraft &&  su - minecraft -c "w
 RUN su - minecraft -c "wget -q https://files.minecraftforge.net/maven/net/minecraftforge/forge/1.12.2-14.23.5.2772/forge-1.12.2-14.23.5.2772-installer.jar && java -jar forge-1.12.2-14.23.5.2772-installer.jar --installServer"
 
 ENV JAVA_HOME /usr/lib/jvm/java-openjdk
-ENV PATH PATH$:JAVA_HOME/bin
+ENV PATH ${PATH}:JAVA_HOME/bin
 WORKDIR /home/minecraft
 USER minecraft
 ENTRYPOINT [ "java","Xmx2048M -Xms2048M -jar","forge-1.12.2-14.23.5.2772-universal.jar","nogui" ]
