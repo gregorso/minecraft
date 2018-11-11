@@ -1,0 +1,1 @@
+docker run  -v D:/git/minecraft/world:/home/minecraft/world -v D:\git\minecraft\mods:/home/minecraft/mods -p 25565:25565 -it 9ea7b812f6a0  bash
