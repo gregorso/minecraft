@@ -21,6 +21,6 @@ ENV JAVA_HOME /usr/lib/jvm/java-openjdk
 ENV PATH ${PATH}:JAVA_HOME/bin
 WORKDIR /home/minecraft
 USER minecraft
-<<<<<<< Updated upstream
+
 CMD java -Xmx2048M -Xms2048M -jar forge-1.12.2-14.23.5.2772-universal.jar nogui
 
