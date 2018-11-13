@@ -1,1 +1,1 @@
-docker run  -v /home/gregor/minecraft/world:/home/minecraft/world -v /home/gregor/minecraft/mods:/home/minecraft/mods -p 25565:25565 -it gregorsoll/minecraft:latest  bash
+docker run  -v /home/gregor/minecraft/world:/home/minecraft/world -v /home/gregor/minecraft/mods:/home/minecraft/mods -p 25565:25565 -it gregorsoll/minecraft:latest 
